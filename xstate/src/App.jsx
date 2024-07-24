@@ -57,8 +57,6 @@ function App() {
     setCity(e.target.value)
   }
 
-  console.log(state)
-
   return (
     <>
     <div>
@@ -84,7 +82,7 @@ function App() {
           ))}
       </select>
     </div>
-    {city.length > 0 && <h2>You selected {city},{state},{country}</h2>}
+    {city.length > 0 && <h2>You selected {city},{} {state},{} {country}</h2>}
     </>
   )
 }
