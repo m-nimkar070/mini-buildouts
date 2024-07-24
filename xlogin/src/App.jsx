@@ -11,6 +11,8 @@ function App() {
     e.preventDefault();
     if (username === "user" && password === "password") {
       setIsLogged(!isLogged);
+    }else{
+      setIsLogged(false)
     }
   };
 
