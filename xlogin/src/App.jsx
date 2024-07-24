@@ -10,9 +10,9 @@ function App() {
   const handleSubmit = (e) => {
     e.preventDefault();
     if (username === "user" && password === "password") {
-      setIsLogged(!isLogged);
-    }else{
-      setIsLogged(false)
+      setIsLogged(true);
+    } else {
+      setIsLogged(false);
     }
   };
 
