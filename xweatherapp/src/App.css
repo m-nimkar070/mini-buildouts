@@ -1,0 +1,23 @@
+.container{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.weather-cards{
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.weather-card{
+  text-align: center;
+  border: 1px solid white;
+  border-radius: 10px;
+  padding: 5px 10px;
+  box-shadow: 2px 3px 3px palegreen;
+}
