@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import './App.css'
+import { useState } from "react";
+import "./App.css";
 
 const customDictionary = {
   teh: "the",
@@ -9,37 +9,46 @@ const customDictionary = {
 };
 
 function App() {
-  const [inputText, setInputText] = useState("")
-  const [suggestionText , setSuggestionText] = useState("")
+  const [inputText, setInputText] = useState("");
+  const [suggestionText, setSuggestionText] = useState("");
 
-  const handleChnage=(e)=>{
+  const handleChnage = (e) => {
     const text = e.target.value;
     setInputText(text);
 
     const words = text.split(" ");
-    const correctedWords = words.map((word)=>{
+    const correctedWords = words.map((word) => {
       const correctedWord = customDictionary[word.toLowerCase()];
       return correctedWord || word;
-    })
-    const firstCorrection = correctedWords.find((word ,index)=> word !== words[index]);
+    });
+    const firstCorrection = correctedWords.find(
+      (word, index) => word !== words[index]
+    );
 
-    setSuggestionText(firstCorrection || "")
-  }
+    setSuggestionText(firstCorrection || "");
+  };
 
   return (
     <>
-    <div className='spellcheck'>
-      <h1>Spell Check and Auto-Correction</h1>
-      <textarea name="textArea" id="textArea" placeholder='Enter Text...'  value={inputText} onChange={handleChnage}></textarea>
-      {suggestionText && (
-        <p>
-          Did you mean: <strong>{suggestionText}</strong>
-        </p>
-      )}
-    </div>
-
+      <div className="spellcheck">
+        <h1>Spell Check and Auto-Correction</h1>
+        <textarea
+          name="textArea"
+          id="textArea"
+          placeholder="Enter Text..."
+          rows={5}
+          cols={40}
+          value={inputText}
+          onChange={handleChnage}
+        ></textarea>
+        {suggestionText && (
+          <p>
+            Did you mean: <strong>{suggestionText}?</strong>
+          </p>
+        )}
+      </div>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
